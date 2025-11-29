@@ -413,9 +413,30 @@ function buildFamilyTreeStructure(displayPersons) {
             const p2 = personMap.get(rel.person2_id);
             if (p1 && p2) {
                 // 右に夫、左に妻
-                let husband = p1.gender === '男性' ? p1 : p2;
-                let wife = p1.gender === '女性' ? p1 : p2;
-                if (!p1.gender && !p2.gender) {
+                let husband = null;
+                let wife = null;
+
+                // 性別で判定
+                if (p1.gender === '男性' && p2.gender === '女性') {
+                    husband = p1;
+                    wife = p2;
+                } else if (p1.gender === '女性' && p2.gender === '男性') {
+                    husband = p2;
+                    wife = p1;
+                } else if (p1.gender === '男性') {
+                    husband = p1;
+                    wife = p2;
+                } else if (p2.gender === '男性') {
+                    husband = p2;
+                    wife = p1;
+                } else if (p1.gender === '女性') {
+                    husband = p2;
+                    wife = p1;
+                } else if (p2.gender === '女性') {
+                    husband = p1;
+                    wife = p2;
+                } else {
+                    // 両方とも性別未設定
                     husband = p1;
                     wife = p2;
                 }
