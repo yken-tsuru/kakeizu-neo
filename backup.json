@@ -1,0 +1,1300 @@
+{
+    "families": [
+        {
+            "id": 1,
+            "name": "デフォルト家系図"
+        },
+        {
+            "id": 2,
+            "name": "スカイウォーカー家"
+        },
+        {
+            "id": 3,
+            "name": "小林家初狩"
+        },
+        {
+            "id": 4,
+            "name": "徳川家"
+        },
+        {
+            "id": 5,
+            "name": "小林家（郷土酒屋）"
+        }
+    ],
+    "persons": [
+        {
+            "id": 1,
+            "name": "宗竹",
+            "gender": "male",
+            "birth_date": "1675",
+            "death_date": "1717",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 2,
+            "name": "宗竹妻",
+            "gender": "female",
+            "birth_date": "1680",
+            "death_date": "1747",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 3,
+            "name": "宗軒",
+            "gender": "male",
+            "birth_date": "1690",
+            "death_date": "1725",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 4,
+            "name": "宗軒妻",
+            "gender": "female",
+            "birth_date": "1690",
+            "death_date": "1721",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 5,
+            "name": "正順",
+            "gender": "male",
+            "birth_date": "1720",
+            "death_date": "1779",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 6,
+            "name": "正順妻",
+            "gender": "female",
+            "birth_date": "1725",
+            "death_date": "1771",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 7,
+            "name": "安兵衛母",
+            "gender": "female",
+            "birth_date": "1737",
+            "death_date": "1799",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 8,
+            "name": "安兵衛",
+            "gender": "male",
+            "birth_date": "1757",
+            "death_date": "1824",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 9,
+            "name": "安兵衛妻",
+            "gender": "female",
+            "birth_date": "1758",
+            "death_date": "1794",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 10,
+            "name": "安兵衛子",
+            "gender": "male",
+            "birth_date": "1792",
+            "death_date": "1794",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 11,
+            "name": "安兵衛後妻",
+            "gender": "female",
+            "birth_date": "1765",
+            "death_date": "1802",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 12,
+            "name": "亦右衛門",
+            "gender": "male",
+            "birth_date": "1789",
+            "death_date": "1856",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 13,
+            "name": "亦右衛門妻",
+            "gender": "female",
+            "birth_date": "1793",
+            "death_date": "1872",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 14,
+            "name": "善継(吉右衛門 ）",
+            "gender": "male",
+            "birth_date": "1828",
+            "death_date": "1903",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 15,
+            "name": "善継前妻",
+            "gender": "female",
+            "birth_date": "1832",
+            "death_date": "1864",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 16,
+            "name": "まき",
+            "gender": "female",
+            "birth_date": "1855",
+            "death_date": "1881",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 17,
+            "name": "亦一郎",
+            "gender": "male",
+            "birth_date": "1852",
+            "death_date": "1874",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 18,
+            "name": "帝三郎",
+            "gender": "male",
+            "birth_date": "1864",
+            "death_date": "1864",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 19,
+            "name": "みね",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 20,
+            "name": "吉郎",
+            "gender": "male",
+            "birth_date": "1858",
+            "death_date": "1905",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 21,
+            "name": "きん",
+            "gender": "female",
+            "birth_date": "1858",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 22,
+            "name": "憲一郎",
+            "gender": "male",
+            "birth_date": "1886",
+            "death_date": "1972",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 23,
+            "name": "ふさ",
+            "gender": "female",
+            "birth_date": "1884",
+            "death_date": "1970",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 24,
+            "name": "恭二郎",
+            "gender": "male",
+            "birth_date": "1888",
+            "death_date": "1925",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 25,
+            "name": "武雄",
+            "gender": "male",
+            "birth_date": "1910",
+            "death_date": "1947",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 26,
+            "name": "禮三郎",
+            "gender": "male",
+            "birth_date": "1896",
+            "death_date": "1947",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 27,
+            "name": "脩治　",
+            "gender": "male",
+            "birth_date": "1923",
+            "death_date": "1996",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 28,
+            "name": "美和子",
+            "gender": "female",
+            "birth_date": "1927",
+            "death_date": "2019",
+            "maiden_name": "萩原",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 29,
+            "name": "横山ジュン",
+            "gender": "female",
+            "birth_date": "1877",
+            "death_date": "",
+            "maiden_name": "横山",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 30,
+            "name": "牛田こう",
+            "gender": "female",
+            "birth_date": "1884",
+            "death_date": "",
+            "maiden_name": "横山",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 31,
+            "name": "森島そう",
+            "gender": "female",
+            "birth_date": "1892",
+            "death_date": "",
+            "maiden_name": "横山",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 32,
+            "name": "登美代",
+            "gender": "female",
+            "birth_date": "1895",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 33,
+            "name": "美恵子",
+            "gender": "female",
+            "birth_date": "1955",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 34,
+            "name": "松月美幸",
+            "gender": "female",
+            "birth_date": "1957",
+            "death_date": "",
+            "maiden_name": "横山",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 35,
+            "name": "憲治",
+            "gender": "male",
+            "birth_date": "1960",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 36,
+            "name": "道子",
+            "gender": "female",
+            "birth_date": "1967",
+            "death_date": "",
+            "maiden_name": "中嶋",
+            "notes": "",
+            "family_tree_id": 1
+        },
+        {
+            "id": 37,
+            "name": "なを",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 38,
+            "name": "勇四郎",
+            "gender": "male",
+            "birth_date": "1903-3-6",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 39,
+            "name": "奈良けい",
+            "gender": "female",
+            "birth_date": "1880-8-6",
+            "death_date": "",
+            "maiden_name": "横山（奈良敬二養女）",
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 40,
+            "name": "チヨ",
+            "gender": "female",
+            "birth_date": "1920-5-1",
+            "death_date": null,
+            "maiden_name": "三浦熊蔵娘",
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 41,
+            "name": "智子",
+            "gender": "female",
+            "birth_date": "1944-10-6",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 42,
+            "name": "徳代",
+            "gender": "female",
+            "birth_date": "1948-2-10",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 43,
+            "name": "正男",
+            "gender": "male",
+            "birth_date": "1948-3-20",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 44,
+            "name": "文男",
+            "gender": "male",
+            "birth_date": "1950-7-21",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 45,
+            "name": "きくゑ",
+            "gender": "female",
+            "birth_date": "1890-12-15",
+            "death_date": "",
+            "maiden_name": "藤田",
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 46,
+            "name": "千代子",
+            "gender": "female",
+            "birth_date": "1929-8-13",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 47,
+            "name": "守",
+            "gender": "male",
+            "birth_date": "1932-10-10",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": null,
+            "family_tree_id": 1
+        },
+        {
+            "id": 48,
+            "name": "ルーク",
+            "gender": "male",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 2
+        },
+        {
+            "id": 49,
+            "name": "アルメリア",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 2
+        },
+        {
+            "id": 50,
+            "name": "徳川 家康",
+            "gender": "male",
+            "birth_date": "1543-01-31",
+            "death_date": "1616-06-01",
+            "maiden_name": null,
+            "notes": "初代将軍",
+            "family_tree_id": 4
+        },
+        {
+            "id": 51,
+            "name": "松平 広忠",
+            "gender": "male",
+            "birth_date": "1526",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": "家康の父",
+            "family_tree_id": 4
+        },
+        {
+            "id": 52,
+            "name": "於大の方",
+            "gender": "female",
+            "birth_date": "1528",
+            "death_date": null,
+            "maiden_name": null,
+            "notes": "家康の母",
+            "family_tree_id": 4
+        },
+        {
+            "id": 53,
+            "name": "築山殿",
+            "gender": "female",
+            "birth_date": null,
+            "death_date": null,
+            "maiden_name": null,
+            "notes": "家康の正室",
+            "family_tree_id": 4
+        },
+        {
+            "id": 54,
+            "name": "徳川 信康",
+            "gender": "male",
+            "birth_date": "1559",
+            "death_date": "1579",
+            "maiden_name": null,
+            "notes": "家康の長男",
+            "family_tree_id": 4
+        },
+        {
+            "id": 55,
+            "name": "結城 秀康",
+            "gender": "male",
+            "birth_date": "1574",
+            "death_date": "1607",
+            "maiden_name": null,
+            "notes": "家康の次男",
+            "family_tree_id": 4
+        },
+        {
+            "id": 56,
+            "name": "徳川 秀忠",
+            "gender": "male",
+            "birth_date": "1579",
+            "death_date": "1632",
+            "maiden_name": null,
+            "notes": "2代将軍",
+            "family_tree_id": 4
+        },
+        {
+            "id": 57,
+            "name": "小林徳右エ門",
+            "gender": "male",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 58,
+            "name": "小林甚兵エ",
+            "gender": "male",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 59,
+            "name": "小林清五郎",
+            "gender": "male",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 60,
+            "name": "小林徳右エ門（長女）",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 61,
+            "name": "小林亀麿",
+            "gender": "male",
+            "birth_date": "1863",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 62,
+            "name": "小林ふく(林平長女)",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 63,
+            "name": "小林林平",
+            "gender": "male",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 64,
+            "name": "磯弥平",
+            "gender": "male",
+            "birth_date": "1852-7-1",
+            "death_date": "",
+            "maiden_name": "小林",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 65,
+            "name": "小林晴徳(長男)",
+            "gender": "male",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 66,
+            "name": "小林甲子郎",
+            "gender": "male",
+            "birth_date": "1907-4-7",
+            "death_date": "1989-6-27",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 67,
+            "name": "穴水三郎",
+            "gender": "male",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 68,
+            "name": "小林エイ(長女)",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 69,
+            "name": "天野XXX(次女）",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "天野義行の妻",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 70,
+            "name": "細田XXX(三女）",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "小林　細田耕の妻",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 71,
+            "name": "三井でん(四女)",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "小林　三井得三の妻",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 72,
+            "name": "名取節子(五女)",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "小林　名取醇の妻",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 73,
+            "name": "西室じやう(六女)",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "小林　西室貴義の妻　（谷村）",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 75,
+            "name": "磯せう",
+            "gender": "male",
+            "birth_date": "1883-4",
+            "death_date": "",
+            "maiden_name": "志村眞三長女",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 76,
+            "name": "磯弥之助",
+            "gender": "male",
+            "birth_date": "1911-7",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 77,
+            "name": "磯しゅん(次女)",
+            "gender": "male",
+            "birth_date": "1900-3",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 78,
+            "name": "磯し▲子(長女）",
+            "gender": "female",
+            "birth_date": "1897-3",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 79,
+            "name": "磯政子(三女)",
+            "gender": "female",
+            "birth_date": "1906-3",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        },
+        {
+            "id": 80,
+            "name": "磯梅代",
+            "gender": "female",
+            "birth_date": "",
+            "death_date": "",
+            "maiden_name": "",
+            "notes": null,
+            "family_tree_id": 5
+        }
+    ],
+    "attributes": [
+        {
+            "id": 1,
+            "person_id": 64,
+            "key": "ソース",
+            "value": "https://jahis.law.nagoya-u.ac.jp/who/docs/who4-682"
+        },
+        {
+            "id": 2,
+            "person_id": 64,
+            "key": "略伝",
+            "value": "君は山梨縣平民小林林兵衞の弟にして嘉永五年七月朔日を以て生れ明治七年一月磯清五郞の養子となり後家督を相續す現時株式會社谷村商業銀行取締役たり 家族は尚二女しゆん（明三六、八生）三女政子（同三九、三生）あり"
+        },
+        {
+            "id": 3,
+            "person_id": 75,
+            "key": "続柄",
+            "value": "志村眞三長女"
+        },
+        {
+            "id": 4,
+            "person_id": 80,
+            "key": "続柄",
+            "value": "磯弥平　五女"
+        }
+    ],
+    "relationships": [
+        {
+            "id": 1,
+            "person1_id": 1,
+            "person2_id": 2,
+            "type": "marriage"
+        },
+        {
+            "id": 2,
+            "person1_id": 3,
+            "person2_id": 4,
+            "type": "marriage"
+        },
+        {
+            "id": 3,
+            "person1_id": 5,
+            "person2_id": 6,
+            "type": "marriage"
+        },
+        {
+            "id": 4,
+            "person1_id": 1,
+            "person2_id": 3,
+            "type": "parent_child"
+        },
+        {
+            "id": 5,
+            "person1_id": 3,
+            "person2_id": 5,
+            "type": "parent_child"
+        },
+        {
+            "id": 6,
+            "person1_id": 5,
+            "person2_id": 7,
+            "type": "marriage"
+        },
+        {
+            "id": 7,
+            "person1_id": 5,
+            "person2_id": 8,
+            "type": "parent_child"
+        },
+        {
+            "id": 8,
+            "person1_id": 8,
+            "person2_id": 9,
+            "type": "marriage"
+        },
+        {
+            "id": 9,
+            "person1_id": 8,
+            "person2_id": 11,
+            "type": "marriage"
+        },
+        {
+            "id": 10,
+            "person1_id": 8,
+            "person2_id": 10,
+            "type": "parent_child"
+        },
+        {
+            "id": 11,
+            "person1_id": 8,
+            "person2_id": 12,
+            "type": "parent_child"
+        },
+        {
+            "id": 12,
+            "person1_id": 12,
+            "person2_id": 13,
+            "type": "marriage"
+        },
+        {
+            "id": 13,
+            "person1_id": 12,
+            "person2_id": 14,
+            "type": "parent_child"
+        },
+        {
+            "id": 14,
+            "person1_id": 14,
+            "person2_id": 15,
+            "type": "marriage"
+        },
+        {
+            "id": 15,
+            "person1_id": 14,
+            "person2_id": 16,
+            "type": "marriage"
+        },
+        {
+            "id": 16,
+            "person1_id": 14,
+            "person2_id": 17,
+            "type": "parent_child"
+        },
+        {
+            "id": 17,
+            "person1_id": 14,
+            "person2_id": 20,
+            "type": "parent_child"
+        },
+        {
+            "id": 18,
+            "person1_id": 14,
+            "person2_id": 18,
+            "type": "parent_child"
+        },
+        {
+            "id": 19,
+            "person1_id": 20,
+            "person2_id": 21,
+            "type": "marriage"
+        },
+        {
+            "id": 20,
+            "person1_id": 20,
+            "person2_id": 22,
+            "type": "parent_child"
+        },
+        {
+            "id": 21,
+            "person1_id": 12,
+            "person2_id": 19,
+            "type": "parent_child"
+        },
+        {
+            "id": 22,
+            "person1_id": 20,
+            "person2_id": 22,
+            "type": "parent_child"
+        },
+        {
+            "id": 23,
+            "person1_id": 20,
+            "person2_id": 24,
+            "type": "parent_child"
+        },
+        {
+            "id": 24,
+            "person1_id": 20,
+            "person2_id": 26,
+            "type": "parent_child"
+        },
+        {
+            "id": 25,
+            "person1_id": 20,
+            "person2_id": 29,
+            "type": "parent_child"
+        },
+        {
+            "id": 26,
+            "person1_id": 20,
+            "person2_id": 30,
+            "type": "parent_child"
+        },
+        {
+            "id": 27,
+            "person1_id": 20,
+            "person2_id": 31,
+            "type": "parent_child"
+        },
+        {
+            "id": 28,
+            "person1_id": 22,
+            "person2_id": 23,
+            "type": "marriage"
+        },
+        {
+            "id": 29,
+            "person1_id": 22,
+            "person2_id": 25,
+            "type": "parent_child"
+        },
+        {
+            "id": 30,
+            "person1_id": 22,
+            "person2_id": 27,
+            "type": "parent_child"
+        },
+        {
+            "id": 31,
+            "person1_id": 27,
+            "person2_id": 33,
+            "type": "parent_child"
+        },
+        {
+            "id": 33,
+            "person1_id": 27,
+            "person2_id": 34,
+            "type": "parent_child"
+        },
+        {
+            "id": 34,
+            "person1_id": 27,
+            "person2_id": 35,
+            "type": "parent_child"
+        },
+        {
+            "id": 35,
+            "person1_id": 20,
+            "person2_id": 32,
+            "type": "parent_child"
+        },
+        {
+            "id": 36,
+            "person1_id": 35,
+            "person2_id": 36,
+            "type": "marriage"
+        },
+        {
+            "id": 37,
+            "person1_id": 27,
+            "person2_id": 28,
+            "type": "marriage"
+        },
+        {
+            "id": 38,
+            "person1_id": 14,
+            "person2_id": 37,
+            "type": "parent_child"
+        },
+        {
+            "id": 39,
+            "person1_id": 20,
+            "person2_id": 38,
+            "type": "parent_child"
+        },
+        {
+            "id": 40,
+            "person1_id": 38,
+            "person2_id": 41,
+            "type": "parent_child"
+        },
+        {
+            "id": 41,
+            "person1_id": 38,
+            "person2_id": 40,
+            "type": "marriage"
+        },
+        {
+            "id": 42,
+            "person1_id": 38,
+            "person2_id": 42,
+            "type": "parent_child"
+        },
+        {
+            "id": 43,
+            "person1_id": 38,
+            "person2_id": 43,
+            "type": "parent_child"
+        },
+        {
+            "id": 44,
+            "person1_id": 38,
+            "person2_id": 44,
+            "type": "parent_child"
+        },
+        {
+            "id": 45,
+            "person1_id": 20,
+            "person2_id": 39,
+            "type": "parent_child"
+        },
+        {
+            "id": 46,
+            "person1_id": 26,
+            "person2_id": 45,
+            "type": "marriage"
+        },
+        {
+            "id": 47,
+            "person1_id": 26,
+            "person2_id": 46,
+            "type": "parent_child"
+        },
+        {
+            "id": 48,
+            "person1_id": 26,
+            "person2_id": 47,
+            "type": "parent_child"
+        },
+        {
+            "id": 49,
+            "person1_id": 48,
+            "person2_id": 49,
+            "type": "marriage"
+        },
+        {
+            "id": 50,
+            "person1_id": 51,
+            "person2_id": 50,
+            "type": "parent_child"
+        },
+        {
+            "id": 51,
+            "person1_id": 52,
+            "person2_id": 50,
+            "type": "parent_child"
+        },
+        {
+            "id": 52,
+            "person1_id": 50,
+            "person2_id": 53,
+            "type": "marriage"
+        },
+        {
+            "id": 54,
+            "person1_id": 50,
+            "person2_id": 54,
+            "type": "parent_child"
+        },
+        {
+            "id": 56,
+            "person1_id": 50,
+            "person2_id": 55,
+            "type": "parent_child"
+        },
+        {
+            "id": 57,
+            "person1_id": 50,
+            "person2_id": 56,
+            "type": "parent_child"
+        },
+        {
+            "id": 58,
+            "person1_id": 57,
+            "person2_id": 58,
+            "type": "parent_child"
+        },
+        {
+            "id": 59,
+            "person1_id": 57,
+            "person2_id": 59,
+            "type": "parent_child"
+        },
+        {
+            "id": 60,
+            "person1_id": 57,
+            "person2_id": 60,
+            "type": "parent_child"
+        },
+        {
+            "id": 62,
+            "person1_id": 61,
+            "person2_id": 62,
+            "type": "marriage"
+        },
+        {
+            "id": 64,
+            "person1_id": 61,
+            "person2_id": 65,
+            "type": "parent_child"
+        },
+        {
+            "id": 65,
+            "person1_id": 61,
+            "person2_id": 66,
+            "type": "parent_child"
+        },
+        {
+            "id": 66,
+            "person1_id": 61,
+            "person2_id": 68,
+            "type": "parent_child"
+        },
+        {
+            "id": 67,
+            "person1_id": 61,
+            "person2_id": 69,
+            "type": "parent_child"
+        },
+        {
+            "id": 68,
+            "person1_id": 61,
+            "person2_id": 70,
+            "type": "parent_child"
+        },
+        {
+            "id": 69,
+            "person1_id": 61,
+            "person2_id": 71,
+            "type": "parent_child"
+        },
+        {
+            "id": 71,
+            "person1_id": 61,
+            "person2_id": 72,
+            "type": "parent_child"
+        },
+        {
+            "id": 72,
+            "person1_id": 61,
+            "person2_id": 73,
+            "type": "parent_child"
+        },
+        {
+            "id": 73,
+            "person1_id": 61,
+            "person2_id": 67,
+            "type": "parent_child"
+        },
+        {
+            "id": 74,
+            "person1_id": 64,
+            "person2_id": 75,
+            "type": "marriage"
+        },
+        {
+            "id": 75,
+            "person1_id": 64,
+            "person2_id": 76,
+            "type": "parent_child"
+        },
+        {
+            "id": 76,
+            "person1_id": 64,
+            "person2_id": 78,
+            "type": "parent_child"
+        },
+        {
+            "id": 77,
+            "person1_id": 64,
+            "person2_id": 77,
+            "type": "parent_child"
+        },
+        {
+            "id": 78,
+            "person1_id": 64,
+            "person2_id": 79,
+            "type": "parent_child"
+        },
+        {
+            "id": 80,
+            "person1_id": 64,
+            "person2_id": 80,
+            "type": "parent_child"
+        },
+        {
+            "id": 81,
+            "person1_id": 58,
+            "person2_id": 61,
+            "type": "parent_child"
+        },
+        {
+            "id": 84,
+            "person1_id": 58,
+            "person2_id": 63,
+            "type": "parent_child"
+        },
+        {
+            "id": 85,
+            "person1_id": 58,
+            "person2_id": 64,
+            "type": "parent_child"
+        }
+    ]
+}
