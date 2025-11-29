@@ -354,19 +354,15 @@ function clearFilter() {
     drawFamilyTree();
 }
 
-// Family Tree Drawing
+// Family Tree Drawing - 指示に従った正しい表示形式
 function drawFamilyTree() {
     const canvas = document.getElementById('family-tree-canvas');
     const ctx = canvas.getContext('2d');
 
-    // Set canvas size
-    canvas.width = 1200;
-    canvas.height = 800;
-
-    // Clear canvas
+    canvas.width = 1600;
+    canvas.height = 1200;
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    // Filter persons if needed
     let displayPersons = persons;
     if (filteredPersonId) {
         displayPersons = getRelatedPersons(filteredPersonId);
@@ -380,11 +376,8 @@ function drawFamilyTree() {
         return;
     }
 
-    // Build family tree structure
-    const tree = buildFamilyTree(displayPersons);
-
-    // Draw the tree
-    renderTree(ctx, tree);
+    const tree = buildFamilyTreeStructure(displayPersons);
+    renderFamilyTree(ctx, tree);
 }
 
 function getRelatedPersons(personId) {
@@ -396,99 +389,312 @@ function getRelatedPersons(personId) {
         const currentSize = related.size;
 
         relationships.forEach(rel => {
-            if (related.has(rel.person1_id)) {
-                related.add(rel.person2_id);
-            }
-            if (related.has(rel.person2_id)) {
-                related.add(rel.person1_id);
-            }
+            if (related.has(rel.person1_id)) related.add(rel.person2_id);
+            if (related.has(rel.person2_id)) related.add(rel.person1_id);
         });
 
-        if (related.size > currentSize) {
-            changed = true;
-        }
+        if (related.size > currentSize) changed = true;
     }
 
     return persons.filter(p => related.has(p.id));
 }
 
-function buildFamilyTree(displayPersons) {
-    // Simple layout: arrange persons in rows
+function buildFamilyTreeStructure(displayPersons) {
     const personMap = new Map();
-    displayPersons.forEach((person, index) => {
-        personMap.set(person.id, {
-            person,
-            x: 100 + (index % 5) * 200,
-            y: 100 + Math.floor(index / 5) * 150
+    displayPersons.forEach(p => personMap.set(p.id, p));
+
+    // 夫婦を見つける
+    const couples = [];
+    const processedRels = new Set();
+
+    relationships.forEach(rel => {
+        if ((rel.type === 'spouse' || rel.type === 'ex_spouse') && !processedRels.has(rel.id)) {
+            const p1 = personMap.get(rel.person1_id);
+            const p2 = personMap.get(rel.person2_id);
+            if (p1 && p2) {
+                // 右に夫、左に妻
+                let husband = p1.gender === '男性' ? p1 : p2;
+                let wife = p1.gender === '女性' ? p1 : p2;
+                if (!p1.gender && !p2.gender) {
+                    husband = p1;
+                    wife = p2;
+                }
+
+                couples.push({
+                    husband,
+                    wife,
+                    type: rel.type,
+                    children: []
+                });
+                processedRels.add(rel.id);
+            }
+        }
+    });
+
+    // 親子関係を見つける
+    const childParentMap = new Map();
+    relationships.forEach(rel => {
+        if (rel.type === 'parent_child') {
+            const parentId = rel.person1_id;
+            const childId = rel.person2_id;
+            if (!childParentMap.has(childId)) {
+                childParentMap.set(childId, []);
+            }
+            childParentMap.get(childId).push(parentId);
+        }
+    });
+
+    // 子供を夫婦に割り当てる
+    childParentMap.forEach((parentIds, childId) => {
+        const child = personMap.get(childId);
+        if (!child) return;
+
+        let foundCouple = false;
+        for (const couple of couples) {
+            const coupleIds = [couple.husband?.id, couple.wife?.id].filter(id => id);
+            if (parentIds.some(pid => coupleIds.includes(pid))) {
+                couple.children.push(child);
+                foundCouple = true;
+                break;
+            }
+        }
+
+        if (!foundCouple) {
+            const parentId = parentIds[0];
+            const parent = personMap.get(parentId);
+            if (parent) {
+                let singleParentCouple = couples.find(c =>
+                    (c.husband?.id === parentId && !c.wife) ||
+                    (c.wife?.id === parentId && !c.husband)
+                );
+
+                if (!singleParentCouple) {
+                    singleParentCouple = {
+                        husband: parent.gender === '男性' ? parent : null,
+                        wife: parent.gender === '女性' ? parent : null,
+                        type: 'single',
+                        children: []
+                    };
+                    couples.push(singleParentCouple);
+                }
+                singleParentCouple.children.push(child);
+            }
+        }
+    });
+
+    // 兄弟姉妹：長男（長女）から順に右側から記述
+    couples.forEach(couple => {
+        couple.children.sort((a, b) => {
+            const dateA = a.birth_date || '';
+            const dateB = b.birth_date || '';
+            return dateA.localeCompare(dateB);
         });
     });
 
-    return { personMap, relationships };
+    const allChildIds = new Set();
+    couples.forEach(couple => {
+        couple.children.forEach(child => allChildIds.add(child.id));
+    });
+
+    const rootCouples = couples.filter(couple => {
+        const husbandIsChild = couple.husband && allChildIds.has(couple.husband.id);
+        const wifeIsChild = couple.wife && allChildIds.has(couple.wife.id);
+        return !husbandIsChild && !wifeIsChild;
+    });
+
+    return {
+        couples,
+        rootCouples: rootCouples.length > 0 ? rootCouples : couples.slice(0, Math.min(3, couples.length)),
+        personMap
+    };
 }
 
-function renderTree(ctx, tree) {
-    const { personMap, relationships } = tree;
+function renderFamilyTree(ctx, tree) {
+    const { couples, rootCouples } = tree;
 
-    // Draw relationships first (lines)
-    ctx.strokeStyle = '#64748b';
-    ctx.lineWidth = 2;
+    if (couples.length === 0) {
+        ctx.font = '20px sans-serif';
+        ctx.fillStyle = '#64748b';
+        ctx.textAlign = 'center';
+        ctx.fillText('家系図データがありません', 800, 600);
+        return;
+    }
 
-    relationships.forEach(rel => {
-        const node1 = personMap.get(rel.person1_id);
-        const node2 = personMap.get(rel.person2_id);
+    const PERSON_WIDTH = 100;
+    const PERSON_HEIGHT = 50;
+    const HORIZONTAL_SPACING = 40;
+    const VERTICAL_SPACING = 120;
+    const COUPLE_SPACING = 20;
 
-        if (!node1 || !node2) return;
+    const positions = new Map();
+    const couplePositions = new Map();
 
-        ctx.beginPath();
+    function layoutCouple(couple, x, y) {
+        const hasHusband = couple.husband !== null;
+        const hasWife = couple.wife !== null;
 
-        if (rel.type === 'spouse') {
-            // Double line for spouse
-            ctx.moveTo(node1.x + 60, node1.y + 20);
-            ctx.lineTo(node2.x, node2.y + 20);
+        let coupleWidth = 0;
+        let coupleX = x;
+
+        if (hasHusband && hasWife) {
+            // 左に妻、右に夫
+            coupleWidth = PERSON_WIDTH * 2 + COUPLE_SPACING;
+            positions.set(couple.wife.id, { x: coupleX, y });
+            positions.set(couple.husband.id, { x: coupleX + PERSON_WIDTH + COUPLE_SPACING, y });
+        } else if (hasHusband) {
+            coupleWidth = PERSON_WIDTH;
+            positions.set(couple.husband.id, { x: coupleX, y });
+        } else if (hasWife) {
+            coupleWidth = PERSON_WIDTH;
+            positions.set(couple.wife.id, { x: coupleX, y });
+        }
+
+        couplePositions.set(couple, { x: coupleX, y, width: coupleWidth });
+
+        // 子供を配置（長男/長女が右側）
+        if (couple.children.length > 0) {
+            const childY = y + VERTICAL_SPACING;
+            const totalChildrenWidth = couple.children.length * PERSON_WIDTH +
+                (couple.children.length - 1) * HORIZONTAL_SPACING;
+
+            let childX = coupleX + (coupleWidth / 2) - (totalChildrenWidth / 2);
+
+            // 逆順で配置（最年長が右）
+            const reversedChildren = [...couple.children].reverse();
+
+            reversedChildren.forEach(child => {
+                positions.set(child.id, { x: childX, y: childY });
+                childX += PERSON_WIDTH + HORIZONTAL_SPACING;
+            });
+        }
+    }
+
+    let startX = 100;
+    rootCouples.forEach((couple) => {
+        layoutCouple(couple, startX, 50);
+        const couplePos = couplePositions.get(couple);
+        startX = couplePos.x + couplePos.width + 150;
+    });
+
+    // 線を描画
+    couples.forEach(couple => {
+        const couplePos = couplePositions.get(couple);
+        if (!couplePos) return;
+
+        const hasHusband = couple.husband !== null;
+        const hasWife = couple.wife !== null;
+
+        // 夫婦間の線
+        if (hasHusband && hasWife) {
+            const wifePos = positions.get(couple.wife.id);
+            const husbandPos = positions.get(couple.husband.id);
+
+            if (couple.type === 'spouse') {
+                // 二重線で引く
+                ctx.strokeStyle = '#1e293b';
+                ctx.lineWidth = 2;
+
+                const y1 = wifePos.y + PERSON_HEIGHT / 2;
+                const x1 = wifePos.x + PERSON_WIDTH;
+                const x2 = husbandPos.x;
+
+                ctx.beginPath();
+                ctx.moveTo(x1, y1 - 3);
+                ctx.lineTo(x2, y1 - 3);
+                ctx.stroke();
+
+                ctx.beginPath();
+                ctx.moveTo(x1, y1 + 3);
+                ctx.lineTo(x2, y1 + 3);
+                ctx.stroke();
+            } else if (couple.type === 'ex_spouse') {
+                // 前妻：一本線で表し
+                ctx.strokeStyle = '#64748b';
+                ctx.lineWidth = 2;
+                ctx.setLineDash([5, 5]);
+
+                const y1 = wifePos.y + PERSON_HEIGHT / 2;
+                const x1 = wifePos.x + PERSON_WIDTH;
+                const x2 = husbandPos.x;
+
+                ctx.beginPath();
+                ctx.moveTo(x1, y1);
+                ctx.lineTo(x2, y1);
+                ctx.stroke();
+                ctx.setLineDash([]);
+            }
+        }
+
+        // 親子：両親の中心から一本線で子につなぐ
+        if (couple.children.length > 0) {
+            const coupleY = couplePos.y + PERSON_HEIGHT;
+            const coupleCenterX = couplePos.x + couplePos.width / 2;
+
+            const childY = coupleY + VERTICAL_SPACING - PERSON_HEIGHT;
+            const midY = coupleY + (VERTICAL_SPACING - PERSON_HEIGHT) / 2;
+
+            ctx.strokeStyle = '#1e293b';
+            ctx.lineWidth = 2;
+            ctx.beginPath();
+            ctx.moveTo(coupleCenterX, coupleY);
+            ctx.lineTo(coupleCenterX, midY);
             ctx.stroke();
-            ctx.moveTo(node1.x + 60, node1.y + 25);
-            ctx.lineTo(node2.x, node2.y + 25);
-            ctx.stroke();
-        } else if (rel.type === 'ex_spouse') {
-            // Single line for ex-spouse
-            ctx.setLineDash([5, 5]);
-            ctx.moveTo(node1.x + 60, node1.y + 20);
-            ctx.lineTo(node2.x, node2.y + 20);
-            ctx.stroke();
-            ctx.setLineDash([]);
-        } else if (rel.type === 'parent_child') {
-            // Vertical line for parent-child
-            ctx.moveTo(node1.x + 30, node1.y + 40);
-            ctx.lineTo(node2.x + 30, node2.y);
-            ctx.stroke();
+
+            if (couple.children.length > 1) {
+                const firstChildPos = positions.get(couple.children[couple.children.length - 1].id);
+                const lastChildPos = positions.get(couple.children[0].id);
+
+                ctx.beginPath();
+                ctx.moveTo(firstChildPos.x + PERSON_WIDTH / 2, midY);
+                ctx.lineTo(lastChildPos.x + PERSON_WIDTH / 2, midY);
+                ctx.stroke();
+            }
+
+            couple.children.forEach(child => {
+                const childPos = positions.get(child.id);
+                const childCenterX = childPos.x + PERSON_WIDTH / 2;
+
+                if (child.is_adopted) {
+                    // 養子：縦二重線でつなぐ
+                    ctx.beginPath();
+                    ctx.moveTo(childCenterX - 3, midY);
+                    ctx.lineTo(childCenterX - 3, childPos.y);
+                    ctx.stroke();
+
+                    ctx.beginPath();
+                    ctx.moveTo(childCenterX + 3, midY);
+                    ctx.lineTo(childCenterX + 3, childPos.y);
+                    ctx.stroke();
+                } else {
+                    ctx.beginPath();
+                    ctx.moveTo(childCenterX, midY);
+                    ctx.lineTo(childCenterX, childPos.y);
+                    ctx.stroke();
+                }
+            });
         }
     });
 
-    // Draw persons (boxes)
-    personMap.forEach(node => {
-        const { person, x, y } = node;
+    // 人物を描画
+    positions.forEach((pos, personId) => {
+        const person = persons.find(p => p.id === personId);
+        if (!person) return;
 
-        // Box
+        const { x, y } = pos;
+
         ctx.fillStyle = person.gender === '男性' ? '#dbeafe' : '#fce7f3';
-        ctx.fillRect(x, y, 120, 40);
+        ctx.fillRect(x, y, PERSON_WIDTH, PERSON_HEIGHT);
+
         ctx.strokeStyle = person.gender === '男性' ? '#2563eb' : '#ec4899';
         ctx.lineWidth = 2;
-        ctx.strokeRect(x, y, 120, 40);
+        ctx.strokeRect(x, y, PERSON_WIDTH, PERSON_HEIGHT);
 
-        // Name
         ctx.fillStyle = '#1e293b';
-        ctx.font = '14px sans-serif';
+        ctx.font = 'bold 14px sans-serif';
         ctx.textAlign = 'center';
-        ctx.fillText(person.name, x + 60, y + 25);
+        ctx.fillText(person.name, x + PERSON_WIDTH / 2, y + PERSON_HEIGHT / 2 + 5);
 
-        // Adopted indicator
-        if (person.is_adopted) {
-            ctx.strokeStyle = '#f59e0b';
-            ctx.lineWidth = 3;
-            ctx.strokeRect(x - 2, y - 2, 124, 44);
-        }
-
-        // Underline if no spouse
+        // 妻または夫がいない場合は、下線を表示
         const hasSpouse = relationships.some(r =>
             (r.person1_id === person.id || r.person2_id === person.id) &&
             (r.type === 'spouse' || r.type === 'ex_spouse')
@@ -498,8 +704,8 @@ function renderTree(ctx, tree) {
             ctx.strokeStyle = '#64748b';
             ctx.lineWidth = 2;
             ctx.beginPath();
-            ctx.moveTo(x, y + 45);
-            ctx.lineTo(x + 120, y + 45);
+            ctx.moveTo(x, y + PERSON_HEIGHT + 5);
+            ctx.lineTo(x + PERSON_WIDTH, y + PERSON_HEIGHT + 5);
             ctx.stroke();
         }
     });
